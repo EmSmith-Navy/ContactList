@@ -40,3 +40,40 @@
 .read-the-docs {
   color: #888;
 }
+
+.selected-contact {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.selected-contact button {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.selected-contact button:hover {
+  background-color: #0056b3;
+}
+
+.selected-contact h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.selected-contact p {
+  margin: 8px 0;
+  color: #666;
+}
+
+.selected-contact h3 {
+  margin-top: 16px;
+  color: #444;
+}

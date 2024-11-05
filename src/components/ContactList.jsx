@@ -10,33 +10,24 @@ const dummyContacts = [
 
 export default function ContactList({ setSelectedContactId }) {
   const [contacts, setContacts] = useState(dummyContacts);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchContacts() {
-      setIsLoading(true);
       try {
         const response = await fetch(
           "https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users"
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch contacts");
-        }
         const result = await response.json();
+        console.log("API Response:", result);
         setContacts(result);
       } catch (error) {
         console.error(error);
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
       }
     }
     fetchContacts();
   }, []);
 
-  if (error) return <div>Error loading contacts: {error}</div>;
-  if (isLoading) return <div>Loading...</div>;
+  console.log("Contacts in state:", contacts);
 
   return (
     <table>
